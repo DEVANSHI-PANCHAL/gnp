@@ -1,6 +1,6 @@
 export const SITE_NAME = 'Gifts N Presents'
 export const SITE_URL = String(
-  import.meta.env.VITE_SITE_URL ?? 'https://www.giftsnpresents.in',
+  import.meta.env.VITE_SITE_URL ?? 'https://giftsnpresents.com',
 ).replace(/\/$/, '')
 
 export const DEFAULT_DESCRIPTION =
