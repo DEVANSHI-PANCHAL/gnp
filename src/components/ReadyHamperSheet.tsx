@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { EMAIL, INSTAGRAM_DM, type ReadyHamper } from '../data/hamper'
+import HamperCarousel from './HamperCarousel'
 
 type Props = {
   product: ReadyHamper | null
@@ -47,7 +48,11 @@ export default function ReadyHamperSheet({ product, onClose }: Props) {
           ×
         </button>
         <div className="sheet-grid">
-          <img src={product.image} alt={product.name} />
+          {product.images && product.images.length > 1 ? (
+            <HamperCarousel images={product.images} alt={product.name} />
+          ) : (
+            <img src={product.image} alt={product.name} />
+          )}
           <div className="sheet-copy">
             <p className="hamper-kicker">{product.kicker}</p>
             <h2 id={titleId}>{product.name}</h2>

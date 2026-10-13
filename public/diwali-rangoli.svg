@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" fill="none">
+  <g transform="translate(150 170)">
+    <circle cx="0" cy="0" r="108" stroke="#9a7344" stroke-width="1.4" opacity="0.55"/>
+    <circle cx="0" cy="0" r="78" stroke="#a35d68" stroke-width="1" opacity="0.5"/>
+    <circle cx="0" cy="0" r="22" fill="#8a3a4c" opacity="0.28"/>
+    <g fill="#9a7344" opacity="0.7">
+      <circle cx="0" cy="-108" r="3.6"/>
+      <circle cx="76" cy="-76" r="3.6"/>
+      <circle cx="108" cy="0" r="3.6"/>
+      <circle cx="76" cy="76" r="3.6"/>
+      <circle cx="0" cy="108" r="3.6"/>
+      <circle cx="-76" cy="76" r="3.6"/>
+      <circle cx="-108" cy="0" r="3.6"/>
+      <circle cx="-76" cy="-76" r="3.6"/>
+    </g>
+    <g fill="#c48978" opacity="0.55">
+      <ellipse cx="0" cy="-50" rx="13" ry="28"/>
+      <ellipse cx="0" cy="-50" rx="13" ry="28" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-50" rx="13" ry="28" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-50" rx="13" ry="28" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-50" rx="13" ry="28" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-50" rx="13" ry="28" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-50" rx="13" ry="28" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-50" rx="13" ry="28" transform="rotate(315)"/>
+    </g>
+  </g>
+  <g transform="translate(430 430) scale(0.55)" opacity="0.8">
+    <circle cx="0" cy="0" r="70" stroke="#9a7344" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="16" fill="#8a3a4c" opacity="0.25"/>
+    <g fill="#c48978" opacity="0.5">
+      <ellipse cx="0" cy="-34" rx="9" ry="18"/>
+      <ellipse cx="0" cy="-34" rx="9" ry="18" transform="rotate(60)"/>
+      <ellipse cx="0" cy="-34" rx="9" ry="18" transform="rotate(120)"/>
+      <ellipse cx="0" cy="-34" rx="9" ry="18" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-34" rx="9" ry="18" transform="rotate(240)"/>
+      <ellipse cx="0" cy="-34" rx="9" ry="18" transform="rotate(300)"/>
+    </g>
+  </g>
+  <g fill="#b08958" opacity="0.7">
+    <circle cx="470" cy="78" r="3.2"/>
+    <circle cx="492" cy="98" r="2"/>
+    <circle cx="70" cy="500" r="2.6"/>
+  </g>
+  <g fill="#c48978" opacity="0.65">
+    <ellipse cx="500" cy="250" rx="5" ry="12" transform="rotate(24 500 250)"/>
+    <ellipse cx="64" cy="300" rx="4" ry="10" transform="rotate(-16 64 300)"/>
+  </g>
+</svg>

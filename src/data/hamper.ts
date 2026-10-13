@@ -290,13 +290,14 @@ export type ReadyHamper = {
   kicker: string
   blurb: string
   image: string
+  images?: string[]
   sizeLabel: string
   soldOut?: boolean
   contents: { name: string; detail: string; image: string }[]
 }
 
 export const celebrationBag: ReadyHamper = {
-  name: 'The Celebration Bag',
+  name: 'Bloom Bag',
   kicker: 'Corporate Diwali hamper',
   blurb:
     'A ready-made festive bag for teams, clients and bulk orders. Frosted PVC with our burgundy handle, gold bow and a flower twig. Ask for a quote on quantity and branding.',
@@ -340,45 +341,117 @@ export const signatureBox: ReadyHamper = {
   name: 'The Signature Box',
   kicker: 'Corporate Diwali hamper',
   blurb:
-    'Our burgundy magnetic box, packed for teams and clients. Two gold-lid jars, a pair of gold diyas, and a Diwali card tucked in the lid. This hamper is sold out for now.',
-  image: '/diwali-signature-box.jpg',
-  sizeLabel: '8 × 11 × 3.5 in',
-  soldOut: true,
+    'A cream peacock gift box with four gold-lid jars: premium kaju, badam, raisins, and pista or paan shots mukhwas. Ask for a quote on quantity and branding.',
+  image: '/diwali-signature-box-closed.jpg',
+  images: [
+    '/diwali-signature-box-closed.jpg',
+    '/diwali-signature-box-open.jpg',
+    '/diwali-signature-box-filled.jpg',
+  ],
+  sizeLabel: '4 gold-lid jars',
   contents: [
     {
-      name: 'Burgundy magnetic box',
-      detail: 'Signature cardboard box. 8 × 11 × 3.5 in.',
-      image: '/products/cardboard-box-brand.jpg',
+      name: 'Peacock gift box',
+      detail: 'Cream box with a painted peacock and floral arch.',
+      image: '/diwali-signature-box-closed.jpg',
     },
     {
-      name: 'Trail mix in glass jar',
-      detail: '250 gm, gold-lid jar',
-      image: '/products/trail-mix-jar-ai.jpg',
+      name: 'Premium kaju',
+      detail: 'Gold-lid jar',
+      image: '/products/signature-box-kaju.jpg',
     },
     {
-      name: 'Premium chocolates in glass jar',
-      detail: '250 gm, gold-lid jar',
-      image: '/products/chocolates-jar-ai.jpg',
+      name: 'Badam',
+      detail: 'Gold-lid jar',
+      image: '/products/signature-box-badam.jpg',
     },
     {
-      name: 'Gold ceramic diyas',
-      detail: 'Pair of ornate gold diyas',
-      image: '/products/ceramic-diya-ai.jpg',
+      name: 'Raisins',
+      detail: 'Gold-lid jar',
+      image: '/products/signature-box-raisins.jpg',
     },
     {
-      name: 'Customised Diwali greeting card',
-      detail: 'Tucked into the inner lid',
-      image: '/products/diwali-card-ai.jpg',
+      name: 'Pista or paan shots mukhwas',
+      detail: 'Gold-lid jar. Choice of pista mukhwas or paan shots.',
+      image: '/products/signature-box-mukhwas.jpg',
     },
   ],
 }
 
-export const littleJoyBox: ReadyHamper = {
-  name: 'The GNP Little Joy Box',
+export const signatureTrio: ReadyHamper = {
+  name: 'The Signature Trio',
   kicker: 'Corporate Diwali hamper',
   blurb:
-    'A White Floral Box with matching dori bag. Inside: trail-mix potli, Celebrations chocolates, a scented candle, a gold lotus holder and a Diwali card. Ask for a quote on quantity and branding.',
-  image: '/diwali-little-joy-box.jpg',
+    'A burgundy peacock gift box with three gold-lid jars: premium almonds, kaju, and a choice of raisins, pista, or mukhwas. Ask for a quote on quantity and branding.',
+  image: '/diwali-signature-trio-closed.jpg',
+  images: [
+    '/diwali-signature-trio-closed.jpg',
+    '/diwali-signature-trio-open.jpg',
+    '/diwali-signature-trio-filled.jpg',
+  ],
+  sizeLabel: '3 gold-lid jars',
+  contents: [
+    {
+      name: 'Peacock gift box',
+      detail: 'Burgundy box with gold mandala, florals, and lovebirds.',
+      image: '/diwali-signature-trio-closed.jpg',
+    },
+    {
+      name: 'Premium almonds',
+      detail: 'Gold-lid jar',
+      image: '/products/signature-trio-almonds.jpg',
+    },
+    {
+      name: 'Kaju',
+      detail: 'Gold-lid jar',
+      image: '/products/signature-trio-kaju.jpg',
+    },
+    {
+      name: 'Raisins, pista, or mukhwas',
+      detail: 'Gold-lid jar. Choice of raisins, pista, or mukhwas.',
+      image: '/products/signature-trio-choice.jpg',
+    },
+  ],
+}
+
+export const signatureDuo: ReadyHamper = {
+  name: 'The Signature Duo',
+  kicker: 'Corporate Diwali hamper',
+  blurb:
+    'A sage peacock gift box with two gold-lid jars: premium almonds and kaju. Dry fruits and nuts can be customised as required. Ask for a quote on quantity and branding.',
+  image: '/diwali-signature-duo-closed.jpg',
+  images: [
+    '/diwali-signature-duo-closed.jpg',
+    '/diwali-signature-duo-open.jpg',
+    '/diwali-signature-duo-filled.jpg',
+  ],
+  sizeLabel: '2 gold-lid jars',
+  contents: [
+    {
+      name: 'Peacock gift box',
+      detail: 'Sage box with peacocks, a palace arch, and gold foliage.',
+      image: '/diwali-signature-duo-closed.jpg',
+    },
+    {
+      name: 'Premium almonds',
+      detail: 'Gold-lid jar. Other dry fruits and nuts available on request.',
+      image: '/products/signature-duo-almonds.jpg',
+    },
+    {
+      name: 'Kaju',
+      detail: 'Gold-lid jar. Other dry fruits and nuts available on request.',
+      image: '/products/signature-duo-kaju.jpg',
+    },
+  ],
+}
+
+export const hamperV1: ReadyHamper = {
+  name: 'Bloom 01',
+  kicker: 'White Floral Box hamper',
+  blurb:
+    'A White Floral Box with matching dori bag. Inside: mixed dry fruits in a jute potli, a small gold candle holder, a mini scented candle, and Cadbury Celebrations. Ask for a quote on quantity and branding.',
+  image: '/diwali-v1-closed.jpg',
+  images: ['/diwali-v1-closed.jpg', '/diwali-little-joy-box.jpg'],
   sizeLabel: 'White Floral Box + carry bag',
   contents: [
     {
@@ -388,18 +461,97 @@ export const littleJoyBox: ReadyHamper = {
     },
     {
       name: 'Trail mix in jute potli',
-      detail: '150 gm, small potli',
+      detail: 'Mixed dry fruits, small potli',
       image: '/products/jute-potli-mix-ai.jpg',
+    },
+    {
+      name: 'Small gold candle holder',
+      detail: 'Lotus tea-light holder',
+      image: '/products/candle-holder-ai.jpg',
+    },
+    {
+      name: 'Small scented candle',
+      detail: 'Mandala tin',
+      image: '/products/scented-candle-ai.jpg',
     },
     {
       name: 'Cadbury Celebrations',
       detail: 'Assorted chocolate pack',
       image: '/products/cadbury-ai.jpg',
     },
+  ],
+}
+
+export const hamperV2: ReadyHamper = {
+  name: 'Bloom 02',
+  kicker: 'White Floral Box hamper',
+  blurb:
+    'A White Floral Box with a see-through window and matching dori bag. Inside: mixed nuts in a jute potli, assorted chocolates in a jute potli, a big gold candle-holder set, and a mini scented candle, with a Diwali card. Ask for a quote on quantity and branding.',
+  image: '/diwali-v2-closed.jpg',
+  images: ['/diwali-v2-closed.jpg', '/diwali-v2.jpg'],
+  sizeLabel: 'White Floral Box + carry bag',
+  contents: [
+    {
+      name: 'White Floral Box',
+      detail: 'Premium ivory floral window box and matching dori bag.',
+      image: '/products/kappa-floral-pack.jpg',
+    },
+    {
+      name: 'Mixed nuts in jute potli',
+      detail: 'Small potli',
+      image: '/products/jute-potli-mix-ai.jpg',
+    },
+    {
+      name: 'Assorted chocolates in jute potli',
+      detail: 'Small potli',
+      image: '/products/jute-potli-choco-ai.jpg',
+    },
+    {
+      name: 'Big gold candle holder',
+      detail: 'Six-piece gold diya set',
+      image: '/products/urli-candle-ai.jpg',
+    },
     {
       name: 'Small scented candle',
       detail: 'Mandala tin',
       image: '/products/scented-candle-ai.jpg',
+    },
+    {
+      name: 'Customised Diwali greeting card',
+      detail: 'Placed outside the box',
+      image: '/products/diwali-card-ai.jpg',
+    },
+  ],
+}
+
+export const hamperV3: ReadyHamper = {
+  name: 'Bloom 03',
+  kicker: 'Green Floral Box hamper',
+  blurb:
+    'A Green Floral Box with a see-through window and matching dori bag. Inside: kaju katli, trail mix in a jute potli, DESI mints meetha paan, a gold lotus candle holder, and a Diwali card. Ask for a quote on quantity and branding.',
+  image: '/diwali-v3-closed.jpg',
+  images: ['/diwali-v3-closed.jpg', '/diwali-v3.jpg'],
+  sizeLabel: 'Green Floral Box + carry bag',
+  contents: [
+    {
+      name: 'Green Floral Box',
+      detail: 'Premium green floral window box and matching dori bag.',
+      image: '/products/kappa-green-pack.jpg',
+    },
+    {
+      name: 'Kaju katli box',
+      detail: 'Go Desi classic kaju katli',
+      image: '/products/kaju-katli-200.jpg',
+    },
+    {
+      name: 'Trail mix in jute potli',
+      detail: 'Mixed nuts and raisins, gold-cord potli',
+      image: '/products/jute-potli-mix-ai.jpg',
+    },
+    {
+      name: 'DESI mints meetha paan',
+      detail: 'Anytime refreshment sachet',
+      image: '/diwali-v3.jpg',
     },
     {
       name: 'Small gold candle holder',

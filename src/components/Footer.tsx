@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} by Gifts N Presents.</p>
+        <p>© {new Date().getFullYear()} Gifts N Presents</p>
         <div className="socials footer-socials">
           <a
             href="https://www.instagram.com/gifts.n.presents/"

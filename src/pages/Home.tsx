@@ -1,27 +1,33 @@
 import { useState } from 'react'
 import HamperBuilder from '../components/HamperBuilder'
+import HamperCarousel from '../components/HamperCarousel'
 import ReadyHamperSheet from '../components/ReadyHamperSheet'
 import Seo from '../components/Seo'
 import {
   celebrationBag,
   ecoPetalHamper,
   EMAIL,
+  hamperV1,
+  hamperV2,
+  hamperV3,
   INSTAGRAM,
-  littleJoyBox,
   mintMailerBox,
   peachMailerBox,
   signatureBox,
+  signatureDuo,
+  signatureTrio,
   type ReadyHamper,
 } from '../data/hamper'
 import { DEFAULT_DESCRIPTION, SITE_NAME } from '../site'
 
 const instagram = [
-  { src: '/diwali-pvc-bag.jpg?v=bow', alt: 'The Celebration Bag Diwali hamper' },
-  { src: '/diwali-little-joy-box.jpg?v=floral', alt: 'The GNP Little Joy Box in a White Floral Box' },
+  { src: '/diwali-pvc-bag.jpg?v=bow', alt: 'Bloom Bag Diwali hamper' },
   { src: '/diwali-mint-box.jpg', alt: 'The Mint Diwali Box hamper' },
   { src: '/diwali-peach-box.jpg?v=candle', alt: 'The Peach Diwali Box hamper' },
   { src: '/diwali-eco-box.jpg', alt: 'The Eco Petal Box hamper' },
-  { src: '/diwali-signature-box.jpg', alt: 'The Signature Box Diwali hamper' },
+  { src: '/diwali-signature-box-closed.jpg', alt: 'The Signature Box with four gold-lid jars' },
+  { src: '/diwali-signature-trio-closed.jpg', alt: 'The Signature Trio with three gold-lid jars' },
+  { src: '/diwali-signature-duo-closed.jpg', alt: 'The Signature Duo with two gold-lid jars' },
 ]
 
 export default function Home() {
@@ -51,35 +57,103 @@ export default function Home() {
       <section className="banner diwali">
         <span className="confetti c1" />
         <span className="confetti c2" />
-        <span className="confetti c3" />
-        <h2>Diwali hampers</h2>
-        <div className="diwali-grid">
-          <button
-            type="button"
-            className="diwali-card"
-            onClick={() => setOpenHamper(celebrationBag)}
-          >
-            <img
-              src="/diwali-pvc-bag.jpg?v=bow"
-              alt="The Celebration Bag with trail mix, chocolates, urli candle and Diwali card"
+        <h2>Hampers for Diwali</h2>
+        <div className="diwali-collection">
+          <div className="diwali-motifs" aria-hidden="true">
+            <img className="motif lg left" src="/diwali-mandala.png" alt="" />
+            <img className="motif sm right" src="/diwali-mandala.png" alt="" />
+          </div>
+          <h3>The Festive Bloom Collection</h3>
+          <div className="diwali-grid diwali-grid-four">
+            <div className="diwali-card">
+              <HamperCarousel
+                images={hamperV1.images ?? [hamperV1.image]}
+                alt="Bloom 01 White Floral Box closed with carry bag, and packed open"
+                onSelect={() => setOpenHamper(hamperV1)}
+              />
+              <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(hamperV1)}>
+                Bloom 01
+              </button>
+            </div>
+            <div className="diwali-card">
+              <HamperCarousel
+                images={hamperV3.images ?? [hamperV3.image]}
+                alt="Bloom 03 Green Floral Box closed with carry bag, and packed open"
+                onSelect={() => setOpenHamper(hamperV3)}
+              />
+              <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(hamperV3)}>
+                Bloom 03
+              </button>
+            </div>
+            <button
+              type="button"
+              className="diwali-card"
+              onClick={() => setOpenHamper(celebrationBag)}
+            >
+              <img
+                src="/diwali-pvc-bag.jpg?v=bow"
+                alt="Bloom Bag with trail mix, chocolates, urli candle and Diwali card"
+              />
+              <p>Bloom Bag</p>
+            </button>
+            <div className="diwali-card">
+              <HamperCarousel
+                images={hamperV2.images ?? [hamperV2.image]}
+                alt="Bloom 02 White Floral Box closed with carry bag, and packed open"
+                onSelect={() => setOpenHamper(hamperV2)}
+              />
+              <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(hamperV2)}>
+                Bloom 02
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="diwali-collection">
+          <div className="diwali-motifs" aria-hidden="true">
+            <img className="motif md right" src="/diwali-mandala.png" alt="" />
+            <img className="motif xs mid" src="/diwali-mandala.png" alt="" />
+          </div>
+          <h3>The Signature Collection</h3>
+          <div className="diwali-grid">
+          <div className="diwali-card">
+            <HamperCarousel
+              images={signatureBox.images ?? [signatureBox.image]}
+              alt="The Signature Box closed, open, and with jars filled with kaju, badam, raisins and mukhwas"
+              onSelect={() => setOpenHamper(signatureBox)}
             />
-            <p>The Celebration Bag</p>
-          </button>
-          <button type="button" className="diwali-card sold-out" onClick={() => setOpenHamper(signatureBox)}>
-            <span className="sold-out-badge">Sold out</span>
-            <img
-              src="/diwali-signature-box.jpg"
-              alt="The Signature Box with trail mix, chocolates, gold diyas and Diwali card"
+            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureBox)}>
+              The Signature Box
+            </button>
+          </div>
+          <div className="diwali-card">
+            <HamperCarousel
+              images={signatureTrio.images ?? [signatureTrio.image]}
+              alt="The Signature Trio closed, open, and with jars filled with almonds, kaju, and raisins"
+              onSelect={() => setOpenHamper(signatureTrio)}
             />
-            <p>The Signature Box</p>
-          </button>
-          <button type="button" className="diwali-card" onClick={() => setOpenHamper(littleJoyBox)}>
-            <img
-              src="/diwali-little-joy-box.jpg?v=floral"
-              alt="The GNP Little Joy Box in a White Floral Box"
+            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureTrio)}>
+              The Signature Trio
+            </button>
+          </div>
+          <div className="diwali-card">
+            <HamperCarousel
+              images={signatureDuo.images ?? [signatureDuo.image]}
+              alt="The Signature Duo closed, open, and with jars filled with almonds and kaju"
+              onSelect={() => setOpenHamper(signatureDuo)}
             />
-            <p>The GNP Little Joy Box</p>
-          </button>
+            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureDuo)}>
+              The Signature Duo
+            </button>
+          </div>
+          </div>
+        </div>
+        <div className="diwali-collection">
+          <div className="diwali-motifs" aria-hidden="true">
+            <img className="motif lg right low" src="/diwali-mandala.png" alt="" />
+            <img className="motif sm left low" src="/diwali-mandala.png" alt="" />
+          </div>
+          <h3>The Classic Collection</h3>
+          <div className="diwali-grid">
           <button type="button" className="diwali-card" onClick={() => setOpenHamper(mintMailerBox)}>
             <img
               src="/diwali-mint-box.jpg"
@@ -101,6 +175,7 @@ export default function Home() {
             />
             <p>The Eco Petal Box</p>
           </button>
+          </div>
         </div>
       </section>
 
@@ -117,7 +192,7 @@ export default function Home() {
       ))} */}
 
       <section className="instagram">
-        <h2>Follow Us on Instagram</h2>
+        <h2>Follow us on Instagram</h2>
         <p className="insta-handle">
           <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">
             @gifts.n.presents

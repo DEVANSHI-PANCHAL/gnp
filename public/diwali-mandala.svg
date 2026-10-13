@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#c6a56e" stroke-width="1.15" stroke-linejoin="round">
+  <circle cx="100" cy="100" r="7" />
+  <circle cx="100" cy="100" r="14" />
+  <circle cx="100" cy="100" r="34" />
+  <circle cx="100" cy="100" r="62" />
+  <circle cx="100" cy="100" r="86" />
+  <g id="inner">
+    <path d="M100 66 C107 78 107 90 100 98 C93 90 93 78 100 66" />
+  </g>
+  <use href="#inner" transform="rotate(45 100 100)" />
+  <use href="#inner" transform="rotate(90 100 100)" />
+  <use href="#inner" transform="rotate(135 100 100)" />
+  <use href="#inner" transform="rotate(180 100 100)" />
+  <use href="#inner" transform="rotate(225 100 100)" />
+  <use href="#inner" transform="rotate(270 100 100)" />
+  <use href="#inner" transform="rotate(315 100 100)" />
+  <g id="outer">
+    <path d="M100 14 C116 40 116 64 100 78 C84 64 84 40 100 14" />
+    <path d="M100 28 C110 44 110 60 100 70 C90 60 90 44 100 28" />
+    <circle cx="100" cy="22" r="1.6" fill="#c6a56e" stroke="none" />
+  </g>
+  <use href="#outer" transform="rotate(45 100 100)" />
+  <use href="#outer" transform="rotate(90 100 100)" />
+  <use href="#outer" transform="rotate(135 100 100)" />
+  <use href="#outer" transform="rotate(180 100 100)" />
+  <use href="#outer" transform="rotate(225 100 100)" />
+  <use href="#outer" transform="rotate(270 100 100)" />
+  <use href="#outer" transform="rotate(315 100 100)" />
+</svg>

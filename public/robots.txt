@@ -4,4 +4,4 @@ Disallow: /catalog.html
 Disallow: /diwali-card-print.html
 Disallow: /diwali-card-a6.pdf
 
-Sitemap: https://giftsnpresents.com/sitemap.xml
+Sitemap: https://www.giftsnpresents.com/sitemap.xml

@@ -30,7 +30,7 @@ function seoFiles(site: string): Plugin {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const site = env.VITE_SITE_URL || 'https://giftsnpresents.com'
+  const site = env.VITE_SITE_URL || 'https://www.giftsnpresents.com'
   return {
     plugins: [react(), seoFiles(site)],
     build: {
