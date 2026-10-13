@@ -22,6 +22,7 @@ body,
 #root {
   margin: 0;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -393,6 +394,7 @@ textarea {
 .diwali-card {
   display: block;
   position: relative;
+  min-width: 0;
   text-align: center;
   border: 0;
   background: none;
@@ -534,7 +536,6 @@ textarea {
   background: none;
   padding: 0;
   cursor: pointer;
-  font: inherit;
 }
 
 .diwali-card:hover .diwali-card-name {
@@ -543,11 +544,35 @@ textarea {
 
 .hamper-carousel {
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  --swiper-theme-color: #821035;
+  --swiper-navigation-size: 32px;
+  --swiper-navigation-color: #821035;
+  --swiper-navigation-sides-offset: 6px;
+  --swiper-pagination-color: #821035;
+  --swiper-pagination-bullet-size: 7px;
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-inactive-opacity: 0.8;
+  --swiper-pagination-bottom: 10px;
 }
 
 .hamper-carousel img {
   display: block;
   width: 100%;
+  -webkit-user-drag: none;
+}
+
+.hamper-carousel .swiper-navigation-icon {
+  width: 10px;
+  height: 18px;
+}
+
+.hamper-carousel .swiper-button-prev,
+.hamper-carousel .swiper-button-next {
+  filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 2px rgba(255, 255, 255, 0.9));
 }
 
 .sheet-grid .hamper-carousel img {
@@ -555,55 +580,6 @@ textarea {
   background: var(--cream);
   aspect-ratio: 1;
   object-fit: contain;
-}
-
-.hamper-carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  width: 32px;
-  height: 32px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--burgundy);
-  font-size: 22px;
-  line-height: 1;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(40, 8, 20, 0.16);
-}
-
-.hamper-carousel-nav.prev {
-  left: 8px;
-}
-
-.hamper-carousel-nav.next {
-  right: 8px;
-}
-
-.hamper-carousel-dots {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-}
-
-.hamper-carousel-dots button {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-
-.hamper-carousel-dots button.on {
-  background: var(--burgundy);
 }
 
 .sold-out-badge {
@@ -1564,7 +1540,7 @@ textarea {
   .product-layout,
   .insta-grid,
   .diwali-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
   .builder-shell {
@@ -1608,6 +1584,15 @@ textarea {
     font-size: 40px;
   }
 
+  .sheet {
+    padding: 36px 16px 20px;
+  }
+
+  .diwali-grid,
+  .diwali-grid-four {
+    gap: 22px 12px;
+  }
+
   .diwali-collection h3 {
     letter-spacing: 0.12em;
     font-size: 11px;
@@ -1624,7 +1609,7 @@ textarea {
   .footer-grid,
   .insta-grid,
   .diwali-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .product-layout {

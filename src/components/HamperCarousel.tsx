@@ -1,4 +1,8 @@
-import { useState } from 'react'
+import { Navigation, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 type Props = {
   images: string[]
@@ -7,53 +11,36 @@ type Props = {
 }
 
 export default function HamperCarousel({ images, alt, onSelect }: Props) {
-  const [index, setIndex] = useState(0)
-  const last = images.length
-  if (!last) return null
+  if (!images.length) return null
 
-  const go = (delta: number, e?: { stopPropagation: () => void; preventDefault: () => void }) => {
-    e?.stopPropagation()
-    e?.preventDefault()
-    setIndex((i) => (i + delta + last) % last)
+  if (images.length === 1) {
+    return (
+      <div className="hamper-carousel">
+        <img src={images[0]} alt={alt} onClick={onSelect} />
+      </div>
+    )
   }
 
   return (
-    <div className="hamper-carousel">
-      <img src={images[index]} alt={alt} onClick={onSelect} />
-      {last > 1 && (
-        <>
-          <button
-            type="button"
-            className="hamper-carousel-nav prev"
-            onClick={(e) => go(-1, e)}
-            aria-label="Previous photo"
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            className="hamper-carousel-nav next"
-            onClick={(e) => go(1, e)}
-            aria-label="Next photo"
-          >
-            ›
-          </button>
-          <div className="hamper-carousel-dots">
-            {images.map((_, d) => (
-              <button
-                key={d}
-                type="button"
-                className={d === index ? 'on' : ''}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setIndex(d)
-                }}
-                aria-label={`Photo ${d + 1}`}
-              />
-            ))}
-          </div>
-        </>
-      )}
-    </div>
+    <Swiper
+      className="hamper-carousel"
+      modules={[Navigation, Pagination]}
+      navigation
+      pagination={{ clickable: true }}
+      rewind
+      slidesPerView={1}
+      spaceBetween={0}
+      onClick={(swiper, event) => {
+        const target = event.target as HTMLElement
+        if (target.closest('.swiper-button-prev, .swiper-button-next, .swiper-pagination')) return
+        if (swiper.allowClick) onSelect?.()
+      }}
+    >
+      {images.map((src, i) => (
+        <SwiperSlide key={`${src}-${i}`}>
+          <img src={src} alt={alt} draggable={false} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   )
 }
