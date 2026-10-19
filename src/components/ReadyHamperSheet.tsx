@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { EMAIL, INSTAGRAM_DM, type ReadyHamper } from '../data/hamper'
 import HamperCarousel from './HamperCarousel'
 
@@ -8,6 +8,8 @@ type Props = {
 }
 
 export default function ReadyHamperSheet({ product, onClose }: Props) {
+  const closeRef = useRef<HTMLButtonElement>(null)
+
   useEffect(() => {
     if (!product) return
     const onKey = (e: KeyboardEvent) => {
@@ -15,6 +17,7 @@ export default function ReadyHamperSheet({ product, onClose }: Props) {
     }
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
+    closeRef.current?.focus()
     window.addEventListener('keydown', onKey)
     return () => {
       document.body.style.overflow = prev
@@ -44,19 +47,28 @@ export default function ReadyHamperSheet({ product, onClose }: Props) {
         aria-labelledby={titleId}
         onClick={(e) => e.stopPropagation()}
       >
-        <button type="button" className="sheet-close" onClick={onClose} aria-label="Close">
-          ×
-        </button>
-        <div className="sheet-grid">
+        <div className="sheet-bar">
+          <button ref={closeRef} type="button" className="sheet-close" onClick={onClose} aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 7l10 10M17 7L7 17" />
+            </svg>
+          </button>
+        </div>
+        <div className="sheet-body">
+          <div className="sheet-grid">
           {product.images && product.images.length > 1 ? (
             <HamperCarousel images={product.images} alt={product.name} />
           ) : (
             <img src={product.image} alt={product.name} />
           )}
           <div className="sheet-copy">
-            <p className="hamper-kicker">{product.kicker}</p>
+            {product.kicker ? <p className="hamper-kicker">{product.kicker}</p> : null}
             <h2 id={titleId}>{product.name}</h2>
-            <p className="sheet-lead">{product.blurb}</p>
+            {product.blurb.split(/\n\n+/).map((paragraph) => (
+              <p className="sheet-lead" key={paragraph}>
+                {paragraph}
+              </p>
+            ))}
             <p className="hamper-scale">Size: {product.sizeLabel}</p>
 
             <h3>What’s inside</h3>
@@ -76,7 +88,9 @@ export default function ReadyHamperSheet({ product, onClose }: Props) {
               <p className="sheet-quote-note sold-out-note">Sold out. Ask us about other Diwali hampers.</p>
             ) : (
               <>
-                <p className="sheet-quote-note">Bulk and branding quoted on request.</p>
+                <p className="sheet-quote-note">
+                  {product.note ?? 'Bulk and branding quoted on request.'}
+                </p>
                 <div className="hero-actions hamper-enquire">
                   <a className="btn-pink" href={dmHref} target="_blank" rel="noopener noreferrer">
                     Get quote on Instagram
@@ -88,6 +102,7 @@ export default function ReadyHamperSheet({ product, onClose }: Props) {
               </>
             )}
           </div>
+        </div>
         </div>
       </div>
     </div>

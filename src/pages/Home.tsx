@@ -41,14 +41,16 @@ export default function Home() {
         path="/"
       />
       <section className="hero">
-        <img
-          src="/hero.jpg"
-          alt="Burgundy gift box with a gold ribbon"
-          width={1600}
-          height={900}
-          fetchPriority="high"
-          decoding="async"
-        />
+        <div className="hero-media">
+          <img
+            src="/hero.jpg"
+            alt="Burgundy gift box with a gold ribbon"
+            width={1600}
+            height={900}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </div>
         <div className="hero-copy">
           <h1>Make Every Moment Memorable.</h1>
         </div>
@@ -58,6 +60,45 @@ export default function Home() {
         <span className="confetti c1" />
         <span className="confetti c2" />
         <h2>Hampers for Diwali</h2>
+        <div className="diwali-collection">
+          <div className="diwali-motifs" aria-hidden="true">
+            <img className="motif md right" src="/diwali-mandala.png" alt="" />
+            <img className="motif xs mid" src="/diwali-mandala.png" alt="" />
+          </div>
+          <h3>The Signature Collection</h3>
+          <div className="diwali-grid">
+          <div className="diwali-card">
+            <HamperCarousel
+              images={signatureBox.images ?? [signatureBox.image]}
+              alt="The Signature Box closed, open, and with jars filled with cashews, almonds, raisins and mukhwas"
+              onSelect={() => setOpenHamper(signatureBox)}
+            />
+            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureBox)}>
+              The Signature Box
+            </button>
+          </div>
+          <div className="diwali-card">
+            <HamperCarousel
+              images={signatureTrio.images ?? [signatureTrio.image]}
+              alt="The Signature Trio closed, open, and with jars filled with almonds, cashews, and raisins"
+              onSelect={() => setOpenHamper(signatureTrio)}
+            />
+            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureTrio)}>
+              The Signature Trio
+            </button>
+          </div>
+          <div className="diwali-card">
+            <HamperCarousel
+              images={signatureDuo.images ?? [signatureDuo.image]}
+              alt="The Signature Duo closed, open, and with jars filled with almonds and cashews"
+              onSelect={() => setOpenHamper(signatureDuo)}
+            />
+            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureDuo)}>
+              The Signature Duo
+            </button>
+          </div>
+          </div>
+        </div>
         <div className="diwali-collection">
           <div className="diwali-motifs" aria-hidden="true">
             <img className="motif lg left" src="/diwali-mandala.png" alt="" />
@@ -77,12 +118,12 @@ export default function Home() {
             </div>
             <div className="diwali-card">
               <HamperCarousel
-                images={hamperV3.images ?? [hamperV3.image]}
-                alt="Bloom 03 Green Floral Box closed with carry bag, and packed open"
-                onSelect={() => setOpenHamper(hamperV3)}
+                images={hamperV2.images ?? [hamperV2.image]}
+                alt="Bloom 02 White Floral Box closed with carry bag, and packed open"
+                onSelect={() => setOpenHamper(hamperV2)}
               />
-              <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(hamperV3)}>
-                Bloom 03
+              <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(hamperV2)}>
+                Bloom 02
               </button>
             </div>
             <button
@@ -98,53 +139,14 @@ export default function Home() {
             </button>
             <div className="diwali-card">
               <HamperCarousel
-                images={hamperV2.images ?? [hamperV2.image]}
-                alt="Bloom 02 White Floral Box closed with carry bag, and packed open"
-                onSelect={() => setOpenHamper(hamperV2)}
+                images={hamperV3.images ?? [hamperV3.image]}
+                alt="Bloom 03 Green Floral Box closed with carry bag, and packed open"
+                onSelect={() => setOpenHamper(hamperV3)}
               />
-              <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(hamperV2)}>
-                Bloom 02
+              <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(hamperV3)}>
+                Bloom 03
               </button>
             </div>
-          </div>
-        </div>
-        <div className="diwali-collection">
-          <div className="diwali-motifs" aria-hidden="true">
-            <img className="motif md right" src="/diwali-mandala.png" alt="" />
-            <img className="motif xs mid" src="/diwali-mandala.png" alt="" />
-          </div>
-          <h3>The Signature Collection</h3>
-          <div className="diwali-grid">
-          <div className="diwali-card">
-            <HamperCarousel
-              images={signatureBox.images ?? [signatureBox.image]}
-              alt="The Signature Box closed, open, and with jars filled with kaju, badam, raisins and mukhwas"
-              onSelect={() => setOpenHamper(signatureBox)}
-            />
-            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureBox)}>
-              The Signature Box
-            </button>
-          </div>
-          <div className="diwali-card">
-            <HamperCarousel
-              images={signatureTrio.images ?? [signatureTrio.image]}
-              alt="The Signature Trio closed, open, and with jars filled with almonds, kaju, and raisins"
-              onSelect={() => setOpenHamper(signatureTrio)}
-            />
-            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureTrio)}>
-              The Signature Trio
-            </button>
-          </div>
-          <div className="diwali-card">
-            <HamperCarousel
-              images={signatureDuo.images ?? [signatureDuo.image]}
-              alt="The Signature Duo closed, open, and with jars filled with almonds and kaju"
-              onSelect={() => setOpenHamper(signatureDuo)}
-            />
-            <button type="button" className="diwali-card-name" onClick={() => setOpenHamper(signatureDuo)}>
-              The Signature Duo
-            </button>
-          </div>
           </div>
         </div>
         <div className="diwali-collection">

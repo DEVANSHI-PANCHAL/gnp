@@ -13,7 +13,9 @@ export default function CartDrawer() {
         <header>
           <h2>Your hamper cart</h2>
           <button type="button" className="menu-close" onClick={() => setOpen(false)} aria-label="Close cart">
-            ×
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 7l10 10M17 7L7 17" />
+            </svg>
           </button>
         </header>
         {items.length === 0 ? (
